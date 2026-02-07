@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "svg2dxf"
+version = "0.1.0"
+description = "Convert SVG files to DXF using Python."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "ezdxf>=1.2.0",
+  "svgpathtools>=1.6.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+]
+
+[project.scripts]
+svg2dxf = "svg2dxf.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
